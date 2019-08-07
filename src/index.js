@@ -23,10 +23,7 @@ class TodoApplication extends React.Component {
           <br />
           <button onClick={this.handleSubmit}>Add #{items.length + 1}</button>
           {/* <button onClick={this.fetchData}>Get Data From API</button> */}
-          <TodoData
-            text="Get Data From API"
-            dataFunction={this.fetchData.bind(this)}
-          />
+          <TodoData text="Get Data" dataFunction={this.fetchData.bind(this)} />
         </form>
         <TodoList items={items} />
       </div>
