@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-// import { TodoHook } from "./todohook";
+import { TodoHook } from "./components/todohook";
 
 class TodoApplication extends React.Component {
   constructor(props) {
@@ -13,22 +13,22 @@ class TodoApplication extends React.Component {
   }
 
   render() {
-    const { items, text } = this.state;
+    // const { items, text } = this.state;
     return (
-      <div>
-        <h1>TODO</h1>
-        <form>
-          <label htmlFor="new-todo">What needs to be done?</label>
-          <br />
-          <input id="new-todo" onChange={this.handleChange} value={text} />
-          <br />
-          <button onClick={this.handleSubmit}>Add #{items.length + 1}</button>
-          {/* <button onClick={this.fetchData}>Get Data From API</button> */}
-          <TodoData text="Get Data" dataFunction={this.fetchData.bind(this)} />
-        </form>
-        <TodoList items={items} />
-      </div>
-      // <TodoHook />
+      // <div>
+      //   <h1>TODO</h1>
+      //   <form>
+      //     <label htmlFor="new-todo">What needs to be done?</label>
+      //     <br />
+      //     <input id="new-todo" onChange={this.handleChange} value={text} />
+      //     <br />
+      //     <button onClick={this.handleSubmit}>Add #{items.length + 1}</button>
+      //     {/* <button onClick={this.fetchData}>Get Data From API</button> */}
+      //     <TodoData text="Get Data" dataFunction={this.fetchData.bind(this)} />
+      //   </form>
+      //   <TodoList items={items} />
+      // </div>
+      <TodoHook />
     );
   }
 

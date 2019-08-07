@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export const TodoHook = () => {
   const [items, setItems] = useState([]);
   const [text, setText] = useState("");
 
+  useEffect(() => {
+    axios.get("https://reqres.in/api/users/").then(function(response) {
+      response.data.data.map(d =>
+        setItems([...items, { id: d.id, text: d.last_name }])
+      );
+    });
+  }, []);
   return (
     <div>
       <h1>TODO</h1>
@@ -16,7 +24,16 @@ export const TodoHook = () => {
           value={text}
         />
         <br />
-        <button onClick={() => setItems([...items, { text, id: Date.now() }])}>
+        <button
+          onClick={e => {
+            e.preventDefault();
+            if (!text.length) {
+              return;
+            }
+            setItems([...items, { text, id: Date.now() }]);
+            setText("");
+          }}
+        >
           Add #{items.length + 1}
         </button>
       </form>
