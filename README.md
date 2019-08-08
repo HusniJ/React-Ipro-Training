@@ -3,8 +3,8 @@ Created with CodeSandbox
 
 This training is intended for users who has prior knowledge in javascript and es6 and following topics are covered with the sample code
 
-- **[X] State and Props**
-- **[X] Functional Components**
+- **[ ] State and Props**
+- **[ ] Functional Components**
 - **[X] Class Components**
 - **[X] Combined Components**
 - **[X] Life Cycle Methods**
